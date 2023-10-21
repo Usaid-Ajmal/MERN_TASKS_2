@@ -1,40 +1,38 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Task 10</title>
-  </head>
-  <body>
-
-    <button onclick="showTime()">show date</button>
-    <p id="1"></p>
-
-    <button onclick="showdate()">show Time</button>
-    <p id="2"></p>
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task4</title>
+</head>
+<body>
 
     <script>
-        
-        function showTime()
-        {
-            const date = new Date();
-            const m = date.toLocaleString('default', { month: 'long' });
-            const d = date.getDate();
-            const year = date.getFullYear();
-            document.getElementById("1").innerHTML = d+"/"+m+"/"+year;
 
-        }
-
-        function showdate()
-        {
+        function showDate(){
             const d = new Date();
-            document.getElementById("2").innerHTML = d;
+            document.getElementById("i2").innerHTML = d ;     
         }
 
-        
+        function showTime(){
+            const d = new Date();
+            const date = d.getDate();
+            const m = d.getMonth();
+            const y = d.getFullYear();
+            const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            document.getElementById("i1").innerHTML= date + "/" +months[m] + "/"+ y;
+        }
+
     </script>
-  </body>
+
+
+    <form name="myform">
+
+        <input type="button" value="Show Date" onclick="showTime()">
+        <p id="i1"></p>
+        <input type="button" value="Show Time" onclick="showDate()">
+        <p id="i2"></p>
+    </form>
+    
+</body>
 </html>
