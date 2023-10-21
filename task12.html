@@ -1,88 +1,104 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Task 12</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
-    <style>
-        .container {
-            width: 40%;
-            padding-top: 50px;
-            padding-right: 15px;
-            padding-left: 15px;
-            margin-right: auto;
-            margin-left: auto;
-        }
-        *, ::after, ::before {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            font-size: 1rem;
-            font-weight: 400;
-            line-height: 1.5;
-            color: #212529;
-            text-align: left;
-            background-color: #fff;
-        }
-
-        .form-label
-        {
-            text-align: left;
-            padding-right: 15px;       
-        }
-
-        .btn
-        {
-            width:100%;
-        }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task6</title>
+    <link
+      
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   </head>
   <body>
-    <div class="container">
-        <form class="row g-3 needs-validation" novalidate>
+    <center>
+      <div
+        class="container m-3"
+        style="width: 30%; box-shadow: 0 0 10px rgba(71, 51, 51, 0.2)"
+      >
+        <div class="display-2">
+          <p class="fst-italic">Instagram</p>
+        </div>
 
-            <h1>INSTAGRAM</h1>
-            <div class="col-md-12">
-                <div class="input-group">
-                    <span class="input-group-text" id="inputGroupPrepend"><i class="bi bi-person-fill"></i></span>
-                    <input type="text" class="form-control col-md-10" id="firstname" placeholder="Username" required>
-                    <div class="col-md-12"></div>
-                    <div class="valid-feedback col-md-10">
-                        Looks good!
-                    </div>
-                    <div class="invalid-feedback">
-                        Please supply your first name
-                    </div>
-                </div>
-            </div>
+        <span id="msg"></span>
 
-            <div class="col-md-12">
-                <div class="input-group">
-                    <span class="input-group-text" id="inputGroupPrepend"><i class="bi bi-person-fill"></i></span>
-                    <input type="password" class="form-control" id="lastname"  placeholder="Password" required>
-                    <div class="valid-feedback">
-                      Looks good!
-                    </div>
-                    <div class="invalid-feedback">
-                        Please supply your last name
-                    </div>
-                </div>
+        <form onsubmit="return valid() ">
+          <div class="input-group form-check my-4">
+            <span class="input-group-addon" style="width: 34px">
+              <span class="glyphicon glyphicon-user"></span
+            ></span>
+            <input
+              type="text"
+              name="uname"
+              id="uname"
+              class="form-control"
+              placeholder="Username"
+            />
+          </div>
+
+          <div class="input-group form-check my-4">
+            <span class="input-group-addon" style="width: 34px"
+              ><span class="glyphicon glyphicon-lock"></span
+            ></span>
+            <input
+              type="text"
+              name="pass"
+              id="pass"
+              placeholder="Password"
+              class="form-control"
+            />
+          </div>
+
+          <div>
+            <button
+              class="btn btn-primary m-3 form-check text-center fs-4"
+              type="submit"
+              style="width: 97%"
+            >
+              Log in
+            </button>
+          </div>
+
+          <div class="row">
+            <div class="col d-flex justify-content-start">
+              <div class="my-3">
+                <input type="checkbox" id="check" /><span class="fs-5 ps-2"
+                  >Remember me</span
+                >
+              </div>
             </div>
-            
-            <div class="col-12">
-              <button class="btn text-light bg-primary" type="submit">Log in</button>
+            <div class="col d-flex justify-content-end my-3">
+              <p class="text-primary fs-5"><a href="">Forgot Password?</a></p>
             </div>
-          </form>
-    </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="m-5 fs-5">
+        <p>Don't have an account! <a href="">Sign up here</a></p>
+      </div>
+    </center>
+
     <script>
-        
+      function valid() {
+        var input1 = document.getElementById('uname').value
+        var input2 = document.getElementById('pass').value
+
+        if (input1.length < 4 || input2.length < 4) {
+          document.getElementById('msg').innerHTML =
+            "<p class='alert alert-danger'> Invalid</p>"
+        } else {
+          document.getElementById('msg').innerHTML =
+            "<p class='alert alert-success'> Valid</p>"
+        }
+
+        return false
+      }
     </script>
   </body>
 </html>
