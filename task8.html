@@ -1,21 +1,39 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
     <title>Task 8</title>
   </head>
   <body>
     <script>
-      function alphabet_order(str)
-      {
-        return str.split('').sort().join('');
-      }
-      console.log(alphabet_order("webmaster"));
-    </script>
+        function rev() {
+          var input = document.myform.string.value;
+        
+          var arr = new Array();
+          var re = "";
+      
+          for (var i =0;i<input.length;++i) {
+            arr[i] = input.charAt(i);
+          }
+          arr.sort();
+          for (var j=0;j<arr.length;++j) {
+            re=re+arr[j];
+          }
+      
+          document.getElementById("result").innerHTML = re;
+        }
+      </script>
+      <form name="myform">
+        
+          Enter a string: <input type="text" name="string" >
+          <input type="button" onclick="rev()" value="click" >
+      </form>
+      <p id="result"></p>
   </body>
 </html>
-
-
